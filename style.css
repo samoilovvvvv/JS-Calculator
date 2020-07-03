@@ -1,0 +1,414 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+@font-face{
+    font-family: xxx; /* Имя шрифта */
+    src: url(fonts/myriadpro.ttf); /* Путь к файлу со шрифтом */
+}
+
+body{
+    background-color: #f8f8f8;
+}
+
+.card{
+    width: 96%;
+    margin: 30px auto;
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+.card-head{
+    margin-bottom: 4%;
+    font-family: xxx;
+    font-size: 5.5em;
+    font-weight: bolder;
+    padding: 6% 0 0 6%;
+}
+
+.first-screen{
+    padding: 0 0 0 6%;
+    margin-bottom: 10%;
+}
+
+.first_screen_discription{
+    width: 60%;
+    font-family: xxx;
+    font-size: 1.5em;
+    margin-bottom: 4%;
+}
+
+.main-button{
+    background: linear-gradient(to top, #e17a20, #f89133);
+    border: none;
+    outline: none;
+    color: white;
+    font-family: xxx;
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 1.5% 3% 1.5% 3%;
+    border-radius: 3%;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+.main-button:hover{
+    background: #d76a0b;
+}
+
+.hidden{
+    display: none;
+}
+
+fieldset{
+    border: none;
+    position: relative;
+}
+
+label{
+    cursor: pointer;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+legend{
+    font-family: xxx;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+.main-form{
+    margin-left: 6%;
+    margin-bottom: 10%;
+}
+
+/* Radio */
+
+.css-radio{
+   -webkit-appearance: none;
+   appearance: none;
+  position: absolute;
+}
+
+.label-radio{
+    padding-left: 25px;
+}
+
+.label-radio:before{
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-image: url(img/checkbox.png);
+    background-size: 18px;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+}
+
+.label-radio:after{
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    background-image: url(img/checkbox.png);
+    background-size: 18px;
+    background-position: 55% 100%;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.css-radio:checked + .label-radio:after{
+    opacity: 1;
+}
+
+.checkbox1{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+ /* Checkbox */
+
+.slider{
+    position: relative;
+}
+
+ .checkbox-span{
+    margin-left: 3rem;
+}
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.slider-indicator:before{
+    content: "";
+    width: 40px;
+    height: 20px;
+    border: 1px solid grey;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position: absolute;
+    top: -4px;
+    left: 0px;
+}
+
+.slider-indicator:after{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: #feb24c;
+    border-radius: 100%;
+    transition: left 0.2s;
+}
+
+input[type="checkbox"]:checked + .slider-indicator:after{
+    left: 22px;
+}
+
+.allText{
+    font-size: 1.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mobileDesign{
+    cursor: default;
+}
+
+.mobileDesign:before{
+    content: "";
+    width: 40px;
+    height: 20px;
+    border: 1px solid grey;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position: absolute;
+    top: -4px;
+    left: 0px;
+}
+
+.mobileDesign:after{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: #92908d;
+    border-radius: 100%;
+    transition: left 0.2s;
+}
+
+/* Price */
+
+.total_price{
+    float: right;
+    margin-right: 2%;
+    position: sticky;
+    top: 25px;
+    bottom: 10px;
+    font-size: 4em;
+    z-index: 5;
+    border-radius: 25px;
+}
+
+/* Margins */
+
+#checkbox_fieldset{
+    margin-top: 5%;
+}
+
+.checkbox_fieldsets{
+    margin-top: 2%;
+}
+
+.allFieldsets{
+    width: 60%;
+}
+
+.textFeedback{
+    margin-top: 4%;
+}
+
+/* FeedBacks */
+
+.total_area{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    margin-top: 5%;
+}
+
+.total_label{
+    min-width:13rem
+}
+
+.total_block{
+    -webkit-box-flex:1;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    margin-left: 60px;
+}
+
+.total_field{
+    background-color:#ebf0f0;
+    border:none;
+    width:70%;
+    min-height:2.5rem;
+}
+
+.total_small__gray{
+    color:#afaeae
+}
+
+.total_submit{
+    margin-left:17rem;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.total_small{
+    max-width: 300px;
+    margin-left:50px;
+}
+
+#total_field{
+    margin-left: 5px;
+}
+
+textarea{
+    resize: none;
+}
+
+.button{
+    padding: 1rem 2rem;
+    background-color: #00ff00;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#dc7522), to(#ff973b));
+    background-image: linear-gradient(0deg, #dc7522 0%, #ff973b 100%);
+    border-radius: 5px;
+    border: transparent;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+/* iPad Pro */
+@media screen and (ma){
+    
+}
+/* iPad Pro */
+@media screen and (max-width: 670px){
+    .total_area{
+        display: block;
+    }
+
+    .total_block{
+        margin-left: 0px;
+    }
+
+    #total_field{
+        margin-left: 0px;
+    }
+
+    .total_submit{
+        margin-left: 0;
+    }
+
+    .total_small{
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .card-head{
+        font-size: 5em;
+    }
+
+    .first_screen_discription{
+        font-size: 1.25em;
+    }
+
+    .main-button{
+        font-size: 1.25em;
+    }
+
+    .total_price{
+        font-size: 3.5em;
+    }
+
+}
+
+@media screen and (max-width: 460px){
+    .card-head{
+        font-size: 4.5em;
+    }
+
+    .total_price{
+        font-size: 3em;
+    }
+
+    .text{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 410px){
+    .card-head{
+        font-size: 4em;
+    }
+
+    .total_price{
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .card-head{
+        font-size: 3em;
+    }
+
+    .first_screen_discription{
+        font-size: 1em;
+    }
+
+    .main-button{
+        font-size: 1em;
+    }
+
+    .text{
+        font-size: 1.7em;
+    }
+
+    .total_price{
+        font-size: 2.2em;
+    }
+}
+
+@media screen and (max-width: 321px){
+    .total_small{
+        margin-left: 10px;
+        width: 115px;
+    }
+}
+/* 1200 1024 768 480 320 */

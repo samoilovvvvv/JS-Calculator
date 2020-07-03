@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <meta name="them-color" content="#d11717">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	    <link rel="icon" type="image/png" sizes="144x144" href="favicon/favicon-144x144.png">
+	    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="72x72" href="favicon/favicon-72x72.png">
+		<link rel="icon" type="image/png" sizes="48x48" href="favicon/android-icon-48x48.png">
+		<link rel="icon" type="image/png" sizes="36x36" href="favicon/android-icon-36x36.png">
+		<link rel="manifest" href="favicon/manifest.json">
+		<link rel="stylesheet" href="style.css">
+        <title>Калькулятор стоимости верстки</title>
+    </head>
+
+    <body>
+        <main class="card">
+			<h1 class="card-head">Стоимость разработки сайта</h1>
+			<div class="first-screen">
+				<p class="first_screen_discription">Расскажите больше о сайте, который вам нужен, чтобы рассчитать примерную стоимость разработки. Если нужна помощь — напишите мне в телеграм или позвоните по телефону.</p>
+				<button class="main-button">Рассчитать...</button>
+			</div>
+
+			<section class="main-form hidden">
+				<form class="form-calculate" method="POST" action="server.php" enctype="multipart/form-data">
+					<fieldset id="first_fieldset" class="allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Какой сайт вам нужен?</legend>
+
+						<div class="checkbox1">
+							<input class="css-radio calc-handler" id="landing" type="radio" checked name="whichSite" value="landing" checked data-site="одностраничный сайт">
+							<label class="label-radio allText" for="landing">Одностраничный сайт</label>
+						</div>
+
+						<div class="checkbox1">
+							<input class="css-radio calc-handler" id="multiPage" type="radio" name="whichSite" value="multiPage" data-site="многостраничный сайт">
+							<label class="label-radio allText" for="multiPage">Многостраничный сайт</label>
+						</div>
+
+						<div class="checkbox1">
+							<input class="css-radio calc-handler" id="store" type="radio" name="whichSite" value="store" data-site="интернет-магазин">
+							<label class="label-radio allText" for="store">Интернет-магазин</label>
+						</div>
+					</fieldset>
+
+					<fieldset id="checkbox_fieldset" class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Нужно ли разрабатывать дизайн сайта?</legend>
+						<label class="slider">
+							<input type="checkbox" class="calc-handler" name="option" id="desktopTemplates" value="desktopTemplates">
+							<span class="slider-indicator"></span>
+							<span class="checkbox-span allText">Нет</span>
+						</label>
+					</fieldset>
+
+					<div class="total_price">
+						<span class="total_price__wrap">
+							<span class="total_price__sum">4000</span>
+							<span class="total_price__val">₽</span>
+						</span>
+					</div>
+
+					<fieldset class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Адаптировать сайт под смартфоны и планшеты?</legend>
+						<label class="slider">
+							<input type="checkbox" class="calc-handler" name="option" id="adapt" value="adapt">
+							<span class="slider-indicator"></span>
+							<span class="checkbox-span allText">Нет</span>
+						</label>
+					</fieldset>
+
+					<fieldset class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Нужно ли разрабатывать дизайн сайта под мобильные устройства?</legend>
+						<label class="slider">
+							<input type="checkbox" class="calc-handler" disabled name="option" id="mobileTemplates" value="mobileTemplates">
+							<span id ="mobileDesign" class="mobileDesign"></span>
+							<span class="checkbox-span allText">Нет</span>
+						</label>
+					</fieldset>
+
+					<fieldset class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Вы хотите самостоятельно менять и добавлять текст на сайте без помощи разработчика?</legend>
+						<label class="slider">
+							<input type="checkbox" class="calc-handler" name="option" id="editable" value="editable">
+							<span class="slider-indicator"></span>
+							<span class="checkbox-span allText">Нет</span>
+						</label>
+					</fieldset>
+
+					<fieldset  class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Дополнительный функционал для сайта</legend>
+						<div class="checkbox1">
+							<input class="css-radio calc-handler" id="metrikaYandex" type="checkbox" name="option" value="metrikaYandex">
+							<label class="label-radio allText" for="metrikaYandex">Яндекс Метрика</label>
+						</div>
+
+						<div class="checkbox1">
+							<input class="css-radio calc-handler" id="analyticsGoogle" type="checkbox" name="option" value="analyticsGoogle">
+							<label class="label-radio allText" for="analyticsGoogle">Гугл Аналитика</label>
+						</div>
+
+						<div class="checkbox1">
+							<input class="css-radio calc-handler" id="sendOrder" type="checkbox" name="option" value="sendOrder">
+							<label class="label-radio allText" for="sendOrder">Отправка заявок на почту или телеграм</label>
+						</div>
+					</fieldset>
+
+					<fieldset  class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Время на разработку сайта</legend>
+							<p class="allText" style="margin-bottom: 2%;">Разрабатываю <span id="data-site">одностраничный сайт</span> от <span class="deadline">7 дней</span>. Если вам нужно сделать сайт быстрее, 
+							поставьте галочку ниже и выберите подходящие сроки.</p>
+							<label class="slider">
+								<input type="checkbox" class="calc-handler want-faster" name="option" id="faster">
+								<span class="slider-indicator"></span>
+								<span class="checkbox-span allText">Хочу быстрее</span>
+							</label>
+
+							<p class="fast-range hidden">
+								<label><input type="range" class="range-deadline calc-handler" min="2" max="7" step="1" value="7" name="deadline"></label>
+								<span><span class="deadline-value">7 дней</span>*</span>
+								<small class="deadline-small">*точные сроки определяются при обсужении технического задания</small>
+							</p>
+
+					</fieldset>
+
+					<fieldset  class="checkbox_fieldsets allFieldsets">
+						<legend class="text" style="margin-bottom: 2%;">Примерная стоимость разработки сайта</legend>
+						<p class="allText text-calc">Сделаем одностраничный сайт, адаптированный под мобильные
+							устройства и планшеты. Установим панель админстратора, чтобы вы
+							могли самостоятельно менять содержание на сайте без разработчика.
+							Подключим Яндекс Метрику, Гугл Аналитику и отправку заявок на почту.</p>
+
+							<p class="allText textFeedback">Оставьте заявку, если хотите, чтобы я разработал сайт. Свяжусь с вами
+								в течение 2 часов, чтобы обсудить задачу.</p>
+
+							<button class="main-button end-button" style="margin-top: 3%;">Отправить заявку</button>
+					</fieldset>
+
+					<fieldset class="total hidden">
+						<div class="total_area">
+							<label for="task" class="total_label allText">Расскажите о задаче</label>
+							<div class="total_block">
+								<textarea class="total_field" id="task" type="text" name="task" rows="7" maxlength="1000"></textarea>
+								<p><small class="total_small__gray">Что нужно сделать, что вы хотите получить</small></p>
+							</div>
+						</div>
+	
+						<div class="total_area">
+							<label for="communication" class="total_label allText">Как с вами связаться</label>
+							<div class="total_block">
+								<input id="communication" type="text" class="total_field" name="communication">
+								<p><small class="total_small__gray">Телефон, телеграм, ватсапп, почта</small></p>
+							</div>
+						</div>
+	
+						<div class="total_area">
+							<label for="total_field" class="total_label allText">Имя</label>
+							<div class="total_block">
+								<input id="total_field" type="text" class="total_field" name="nameCustomer">
+							</div>
+						</div>
+	
+						<div class="total_submit">
+							<button type="submit" class="button">Отправить</button>
+							<p class="total_small">Свяжусь с вами в течение двух часов</p>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="script.js"></script>
+    </body>
+</html>
